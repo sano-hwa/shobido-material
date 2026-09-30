@@ -53,16 +53,41 @@ footer{background:var(--pink);color:#fff;padding:48px 0;text-align:center;font-w
 footer small{display:block;font-weight:400;opacity:.85;margin-top:6px}
 @media(max-width:860px){.concept,.notes{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:36px}.phone{margin:0 auto}section{padding:56px 0}header.hero::after{width:200px;height:200px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--blush);padding:calc(10px + env(safe-area-inset-top)) 0 10px}
+.tabs .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:900;padding:10px 26px;border-radius:99px;border:2px solid var(--pink);background:var(--card);color:var(--pink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--pink);color:#fff}
+.tabs button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.tabs small{color:var(--muted);margin-left:auto;font-size:13px}
+.plan[hidden]{display:none}
+.catch{font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--pink);margin:0 0 32px;padding-left:26px}
+.dark{--pink:#E5004F}
+.ex{display:grid;gap:18px}
+.ex div{background:var(--card);border:1px solid var(--ink);padding:22px 26px;border-radius:6px}
+.ex h3{margin:0 0 6px;color:var(--pink);font-size:17px}
+.ex p{margin:0 0 8px;font-size:14.5px}.ex p:last-child{margin:0}
+.duo{display:grid;grid-template-columns:1fr minmax(0,340px);gap:48px;align-items:start}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.roles div{background:var(--card);border:1px solid var(--ink);border-radius:6px;padding:24px}
+.roles h3{margin:0 0 4px;font-size:20px}.roles h4{margin:0 0 8px;color:var(--pink);font-size:16px}.roles p{margin:0;font-size:14.5px}
+@media(max-width:860px){.duo{grid-template-columns:1fr}.roles{grid-template-columns:1fr}.tabs small{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
   <div class="brand">SHOBIDO</div>
   <h1>粧美堂 コーポレートサイト<br>リニューアルデザイン提案</h1>
-  <p class="lead">「あなたらしさを、瞳にデザインする。」という想いを、色とイラストの動きで伝えるトップページのご提案です。PC・SPのデザインカンプと、メインビジュアルのアニメーションイメージをご覧いただけます。</p>
-  <nav><a href="#concept">コンセプト</a><a href="#pc">PCデザイン</a><a href="#sp">SPデザイン</a><a href="#motion">アニメーション</a></nav>
+  <p class="lead">「あなたらしさを、瞳にデザインする。」という想いを、色とイラストの動きで伝えるトップページのご提案です。A案・B案の2案をご用意しました。タブで切り替えてご覧ください。</p>
+  
 </div></header>
+<div class="tabs"><div class="wrap" role="tablist">
+<button role="tab" id="tabA" aria-selected="true" aria-controls="planA">A案</button>
+<button role="tab" id="tabB" aria-selected="false" aria-controls="planB">B案</button>
+<small id="tabnote">A案:親しみのあるイラストと動きで伝えるご提案</small></div></div>
 
+
+<div class="plan" id="planA" role="tabpanel" aria-labelledby="tabA">
 <section id="concept"><div class="wrap">
   <h2>デザインコンセプト</h2>
   <p class="sub">ブランドカラーのピンクを軸に、親しみやすさと企業としての信頼感を両立します。</p>
@@ -110,6 +135,75 @@ footer small{display:block;font-weight:400;opacity:.85;margin-top:6px}
   <p class="hint">動画:movie/movie.mp4</p>
 </div></section>
 
+</div>
+<div class="plan" id="planB" role="tabpanel" aria-labelledby="tabB" hidden>
+<section><div class="wrap">
+  <h2>デザインコンセプト</h2>
+  <p class="sub">B案は、大手企業ならではの格と、見渡しやすい構成を軸にしたご提案です。</p>
+  <p class="catch">粧美堂の今を、正しく・強く・美しく証明する</p>
+  <div class="concept">
+    <div><h3>1 「格」と「余裕」</h3><p>大手ならではの「格」と「余裕」を持ったビジュアル設計にします。</p></div>
+    <div><h3>2 見渡せる回遊設計</h3><p>Bento UIで、ひと目で「見渡せる」回遊設計へ変えます。</p></div>
+    <div><h3>3 現在地と戦略を翻訳</h3><p>企業の「現在地」と「戦略」を、見た目で翻訳します。</p></div>
+  </div>
+</div></section>
+
+<section class="tint"><div class="wrap">
+  <h2>TOPページ全体</h2>
+  <p class="sub">PCとSPのトップページ全体です。画面内をスクロールしてご確認ください。</p>
+  <div class="duo">
+    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>PC</span></div>
+    <div class="scroll" tabindex="0" aria-label="B案 PCトップデザイン"><img src="images/TOP_PC.jpg" alt="B案 PCトップデザイン"></div></div>
+    <div class="phone"><div class="scroll" tabindex="0" aria-label="B案 SPトップデザイン"><img src="images/TOP_SP.jpg" alt="B案 SPトップデザイン"></div></div>
+  </div>
+  <p class="hint">画像:images/TOP_PC.jpg / images/TOP_SP.jpg</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>PCデザインのご説明</h2>
+  <p class="sub">ファーストビューから、フッターまでの設計意図です。</p>
+  <div class="ex">
+    <div><h3>ファーストビューで「粧美堂の今」を宣言する</h3>
+      <p>バラの花びらのクローズアップをフルブリードで配置し、「笑顔を、咲かせよう。」というコピーを大きく重ねています。</p>
+      <p>ファーストビューの役割は、ブランドの“格”を一瞬で伝えることです。情報より先に「この会社はただ者ではない」という印象を与える設計です。</p>
+      <p>右カラムのニュースエリアとの2カラム構成で、KVの存在感を保ちつつ情報密度を担保しています。下方には、商品・事業に関連する動線を親しみやすい3Dイラストで配置し、各コンテンツへの入口としても機能させています。</p></div>
+    <div><h3>事業の広がりを「見渡せる」構造へ</h3>
+      <p>「美を運ぶ」から「美を創る」へというブランドステートメントをページ中段に配置。スクロールの流れの中で、自然にブランドの文脈が伝わります。</p>
+      <p>投資家・取引先・求職者など、目的の異なるステークホルダーが迷わずゴールへたどり着けるよう、4つの主要コンテンツをグリッドで並列配置しました。スクロール不要で全体を俯瞰でき、「自分に関係のある情報がどこにあるか」が瞬時に判断できます。</p></div>
+    <div><h3>「活きた情報」で企業の今を伝える</h3>
+      <p>企業の姿勢や事業を一通り伝えた流れの中に、ニュースリリースとIR情報を2カラムで並列配置しています。最新情報をコンテンツとして設けることで、「常に前進している企業」であることを伝えます。</p>
+      <p>IRは企業の信頼性・透明性・成長性を示す重要な情報です。ニュースと同じ視線の高さに並べ、その価値にふさわしい存在感を与えています。</p></div>
+    <div><h3>サイトの「出口」を、次の入口に変える</h3>
+      <p>フッター直上のバナーエリアでは、B2B展開・トップインタビュー・グローバル戦略の3コンテンツを横並びで配置し、ユーザーが「次に見るべきもの」へ自然に進めるようにしています。</p>
+      <p>フッターは全コンテンツを整然と一覧できる構成にし、どのページからでも見たい情報へ迷わずたどり着けます。離脱ではなく、回遊につなげます。</p></div>
+  </div>
+</div></section>
+
+<section class="tint"><div class="wrap">
+  <h2>SPデザインのご説明</h2>
+  <p class="sub">スマートフォンで、粧美堂をフルに体験する設計です。</p>
+  <div class="ex"><div><h3>SP体験の質が、そのままブランド体験の質になる</h3>
+    <p>スマートフォンからのアクセスが過半数を占める今、SPの体験がブランド体験の質を左右します。縦スクロールの流れに沿って情報が自然に展開されるコンテンツ配置、指で迷わず操作できるボタンサイズと余白、ハンバーガーメニューに整理されたナビゲーションなど、「スマホで粧美堂を知ろうとする人」を起点に設計しています。</p>
+    <p>ファーストビューのキャッチコピーは、画面いっぱいに広がる大胆な文字組で、小さな画面でもブランドの存在感を損なわず届けます。</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>「風格」と「親しみ」を使い分けるビジュアル戦略</h2>
+  <p class="sub">コンテンツの役割に応じて、ビジュアルの言語を変えます。</p>
+  <div class="roles">
+    <div><h3>写真</h3><h4>企業としての風格を証明する</h4><p>メインビジュアル、会社情報、IR、サステナビリティ、採用などには実写の写真を配置します。企業の実体を判断しようとするステークホルダーに、リアリティと重厚感で信頼感と風格を伝えます。</p></div>
+    <div><h3>イラスト</h3><h4>粧美堂だけの世界観をつくる</h4><p>事業内容、商品情報、OEMなどのカテゴリには、オリジナル3Dイラストを作成します。親しみやすさと遊び心を持ちながら、どのページでも「粧美堂らしさ」を感じられるようにします。</p></div>
+    <div><h3>使い分けの意図</h3><h4>ビジュアルに「役割」を持たせる</h4><p>写真で「信頼してもらう」。イラストで「好きになってもらう」。この使い分けが、粧美堂の多面的な強みをひとつのサイトで体現する鍵です。</p></div>
+  </div>
+</div></section>
+</div>
 <footer><div class="wrap">笑顔を、咲かせよう。<small>SHOBIDO Corporate Site Renewal Proposal</small></div></footer>
+<script>
+(function(){var n={A:"A案:親しみのあるイラストと動きで伝えるご提案",B:"B案:格と見渡しやすさで「今」を証明するご提案"};
+function show(k,push){["A","B"].forEach(function(x){document.getElementById("plan"+x).hidden=x!==k;document.getElementById("tab"+x).setAttribute("aria-selected",x===k)});
+document.getElementById("tabnote").textContent=n[k];if(push)try{history.replaceState(null,"","#plan"+k)}catch(e){}window.scrollTo({top:document.querySelector(".tabs").offsetTop,behavior:"auto"})}
+document.getElementById("tabA").onclick=function(){show("A",1)};document.getElementById("tabB").onclick=function(){show("B",1)};
+if(location.hash==="#planB")show("B",0)})();
+</script>
 </body>
 </html>
