@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>粧美堂 コーポレートサイト リニューアルデザイン提案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E5004F;--soft:#FDEEF0;--blush:#F9D9DE;--ink:#3A2A2E;--muted:#7C6A6F;--bg:#fff;--card:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--soft:#2A1C20;--blush:#3B2429;--ink:#F6E9EB;--muted:#C0A9AE;--bg:#1C1316;--card:#241A1D}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Zen Kaku Gothic New",sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.hero{background:linear-gradient(180deg,var(--soft),var(--bg));padding:96px 0 72px;position:relative;overflow:hidden}
+header.hero::after{content:"";position:absolute;right:-90px;top:-70px;width:340px;height:340px;background:var(--pink);opacity:.9;clip-path:polygon(50% 0,100% 30%,88% 82%,40% 100%,0 55%)}
+.brand{font-weight:900;letter-spacing:.08em;color:var(--pink);font-size:20px}
+h1{font-size:clamp(30px,5vw,54px);line-height:1.35;margin:28px 0 20px;font-weight:900;position:relative;z-index:1}
+.lead{max-width:34em;color:var(--muted);position:relative;z-index:1}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:36px;position:relative;z-index:1}
+nav a{padding:8px 18px;border-radius:99px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px;font-weight:700;border:1px solid var(--blush)}
+nav a:hover,nav a:focus-visible{background:var(--pink);color:#fff;outline:none}
+section{padding:80px 0}
+section.tint{background:var(--soft)}
+h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px;font-weight:900;padding-left:18px;border-left:8px solid var(--pink);line-height:1.4}
+.sub{color:var(--muted);margin:0 0 40px;padding-left:26px}
+.concept{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.concept div{background:var(--card);border-radius:24px 24px 24px 4px;padding:28px;border:1px solid var(--blush)}
+.concept h3{margin:0 0 8px;color:var(--pink);font-size:18px}
+.concept p{margin:0;font-size:14.5px}
+.browser{background:var(--card);border-radius:14px;border:1px solid var(--blush);box-shadow:0 24px 60px -30px rgba(229,0,79,.45);overflow:hidden}
+.bar{display:flex;gap:7px;align-items:center;padding:12px 16px;background:var(--blush)}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--pink);opacity:.55}
+.bar span{margin-left:12px;font-size:12px;color:var(--muted)}
+.scroll{overflow-y:auto;height:min(72vh,640px);-webkit-overflow-scrolling:touch}
+.scroll img{display:block;width:100%;height:auto}
+.hint{font-size:13px;color:var(--muted);margin:14px 0 0;text-align:right}
+.split{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:start}
+.phone{background:#2b1d21;border-radius:44px;padding:14px;box-shadow:0 24px 60px -30px rgba(229,0,79,.55);max-width:340px}
+.phone .scroll{border-radius:32px;height:min(74vh,660px);background:#fff}
+ol.points{list-style:none;padding:0;margin:0;counter-reset:p}
+ol.points li{counter-increment:p;padding:0 0 26px 58px;position:relative}
+ol.points li::before{content:counter(p);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;font-weight:900;display:grid;place-items:center}
+ol.points b{display:block;font-size:17px;margin-bottom:2px}
+ol.points span{font-size:14.5px;color:var(--muted)}
+.video{border-radius:18px;overflow:hidden;border:1px solid var(--blush);background:#000;box-shadow:0 24px 60px -30px rgba(229,0,79,.45)}
+video{display:block;width:100%;height:auto}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.notes div{padding:20px 24px;background:var(--card);border-radius:16px;border:1px solid var(--blush);font-size:14.5px}
+.notes b{color:var(--pink);display:block;margin-bottom:4px}
+footer{background:var(--pink);color:#fff;padding:48px 0;text-align:center;font-weight:700}
+footer small{display:block;font-weight:400;opacity:.85;margin-top:6px}
+@media(max-width:860px){.concept,.notes{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:36px}.phone{margin:0 auto}section{padding:56px 0}header.hero::after{width:200px;height:200px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="brand">SHOBIDO</div>
+  <h1>粧美堂 コーポレートサイト<br>リニューアルデザイン提案</h1>
+  <p class="lead">「あなたらしさを、瞳にデザインする。」という想いを、色とイラストの動きで伝えるトップページのご提案です。PC・SPのデザインカンプと、メインビジュアルのアニメーションイメージをご覧いただけます。</p>
+  <nav><a href="#concept">コンセプト</a><a href="#pc">PCデザイン</a><a href="#sp">SPデザイン</a><a href="#motion">アニメーション</a></nav>
+</div></header>
+
+<section id="concept"><div class="wrap">
+  <h2>デザインコンセプト</h2>
+  <p class="sub">ブランドカラーのピンクを軸に、親しみやすさと企業としての信頼感を両立します。</p>
+  <div class="concept">
+    <div><h3>親しみのあるイラスト</h3><p>メインビジュアルに、人々が一枚の絵をつくり上げるイラストを採用。化粧品・コンタクトレンズ・キッズコスメを扱う粧美堂の世界観を、ひと目で伝えます。</p></div>
+    <div><h3>ピンクのグラデーション</h3><p>淡いピンクの背景にブランドカラーを効かせ、華やかさと読みやすさを両立。区切りの色面で、ページのリズムをつくります。</p></div>
+    <div><h3>目的別の導線設計</h3><p>ニュース、商品、法人向けサービス、会社情報、IR、採用を、それぞれ探しやすいブロックに整理しました。</p></div>
+  </div>
+</div></section>
+
+<section id="pc" class="tint"><div class="wrap">
+  <h2>PCデザイン(トップページ)</h2>
+  <p class="sub">画面内をスクロールして、ページ全体をご確認いただけます。</p>
+  <div class="browser">
+    <div class="bar"><i></i><i></i><i></i><span>PC / 1512px</span></div>
+    <div class="scroll" tabindex="0" aria-label="PCトップデザイン"><img src="images/TOP.jpg" alt="粧美堂コーポレートサイト PCトップデザイン"></div>
+  </div>
+  <p class="hint">画像:images/TOP.jpg</p>
+</div></section>
+
+<section id="sp"><div class="wrap">
+  <h2>SPデザイン(トップページ)</h2>
+  <p class="sub">スマートフォンでも、PCと同じ世界観と情報の順番で読める構成です。</p>
+  <div class="split">
+    <div class="phone"><div class="scroll" tabindex="0" aria-label="SPトップデザイン"><img src="images/SP.jpg" alt="粧美堂コーポレートサイト SPトップデザイン"></div></div>
+    <ol class="points">
+      <li><b>メインビジュアルの直下に主要ボタン</b><span>「商品を探す」「お客様サポート」を最初の画面に置き、迷わず目的のページへ進めます。</span></li>
+      <li><b>重要なお知らせを目立たせる</b><span>ピンクの帯で、災害時のお見舞いなど大切な告知を確実に届けます。</span></li>
+      <li><b>PCと同じ順番の縦積み構成</b><span>ニュース、商品、法人向けサービス、会社情報、IRの順で、PCとSPの体験をそろえました。</span></li>
+      <li><b>指で押しやすいボタンサイズ</b><span>横幅いっぱいのボタンで、片手でも操作しやすくしています。</span></li>
+    </ol>
+  </div>
+  <p class="hint">画像:images/SP.jpg</p>
+</div></section>
+
+<section id="motion" class="tint"><div class="wrap">
+  <h2>メインビジュアルのアニメーション</h2>
+  <p class="sub">イラストが少しずつ動き、来訪者を迎えるトップならではの演出イメージです。</p>
+  <div class="video"><video src="movie/movie.mp4" controls autoplay muted loop playsinline preload="metadata"></video></div>
+  <div class="notes">
+    <div><b>動きの役割</b>ページを開いた瞬間に、ブランドの楽しさと親しみを伝えます。</div>
+    <div><b>読み込みへの配慮</b>本番では軽量な動画または Lottie 形式での実装を想定しています。</div>
+    <div><b>SPへの展開</b>SPでは同じ動きを縦長の構図に合わせて表示します。</div>
+  </div>
+  <p class="hint">動画:movie/movie.mp4</p>
+</div></section>
+
+<footer><div class="wrap">笑顔を、咲かせよう。<small>SHOBIDO Corporate Site Renewal Proposal</small></div></footer>
+</body>
+</html>
