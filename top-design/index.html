@@ -1,209 +1,780 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>粧美堂 コーポレートサイト リニューアルデザイン提案</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-<style>
-:root{--pink:#E5004F;--soft:#FDEEF0;--blush:#F9D9DE;--ink:#3A2A2E;--muted:#7C6A6F;--bg:#fff;--card:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--soft:#2A1C20;--blush:#3B2429;--ink:#F6E9EB;--muted:#C0A9AE;--bg:#1C1316;--card:#241A1D}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Zen Kaku Gothic New",sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-header.hero{background:linear-gradient(180deg,var(--soft),var(--bg));padding:96px 0 72px;position:relative;overflow:hidden}
-header.hero::after{content:"";position:absolute;right:-90px;top:-70px;width:340px;height:340px;background:var(--pink);opacity:.9;clip-path:polygon(50% 0,100% 30%,88% 82%,40% 100%,0 55%)}
-.brand{font-weight:900;letter-spacing:.08em;color:var(--pink);font-size:20px}
-h1{font-size:clamp(30px,5vw,54px);line-height:1.35;margin:28px 0 20px;font-weight:900;position:relative;z-index:1}
-.lead{max-width:34em;color:var(--muted);position:relative;z-index:1}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:36px;position:relative;z-index:1}
-nav a{padding:8px 18px;border-radius:99px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14px;font-weight:700;border:1px solid var(--blush)}
-nav a:hover,nav a:focus-visible{background:var(--pink);color:#fff;outline:none}
-section{padding:80px 0}
-section.tint{background:var(--soft)}
-h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px;font-weight:900;padding-left:18px;border-left:8px solid var(--pink);line-height:1.4}
-.sub{color:var(--muted);margin:0 0 40px;padding-left:26px}
-.concept{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.concept div{background:var(--card);border-radius:24px 24px 24px 4px;padding:28px;border:1px solid var(--blush)}
-.concept h3{margin:0 0 8px;color:var(--pink);font-size:18px}
-.concept p{margin:0;font-size:14.5px}
-.browser{background:var(--card);border-radius:14px;border:1px solid var(--blush);box-shadow:0 24px 60px -30px rgba(229,0,79,.45);overflow:hidden}
-.bar{display:flex;gap:7px;align-items:center;padding:12px 16px;background:var(--blush)}
-.bar i{width:11px;height:11px;border-radius:50%;background:var(--pink);opacity:.55}
-.bar span{margin-left:12px;font-size:12px;color:var(--muted)}
-.scroll{overflow-y:auto;height:min(72vh,640px);-webkit-overflow-scrolling:touch}
-.scroll img{display:block;width:100%;height:auto}
-.hint{font-size:13px;color:var(--muted);margin:14px 0 0;text-align:right}
-.split{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:start}
-.phone{background:#2b1d21;border-radius:44px;padding:14px;box-shadow:0 24px 60px -30px rgba(229,0,79,.55);max-width:340px}
-.phone .scroll{border-radius:32px;height:min(74vh,660px);background:#fff}
-ol.points{list-style:none;padding:0;margin:0;counter-reset:p}
-ol.points li{counter-increment:p;padding:0 0 26px 58px;position:relative}
-ol.points li::before{content:counter(p);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;font-weight:900;display:grid;place-items:center}
-ol.points b{display:block;font-size:17px;margin-bottom:2px}
-ol.points span{font-size:14.5px;color:var(--muted)}
-.video{border-radius:18px;overflow:hidden;border:1px solid var(--blush);background:#000;box-shadow:0 24px 60px -30px rgba(229,0,79,.45)}
-video{display:block;width:100%;height:auto}
-.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
-.notes div{padding:20px 24px;background:var(--card);border-radius:16px;border:1px solid var(--blush);font-size:14.5px}
-.notes b{color:var(--pink);display:block;margin-bottom:4px}
-footer{background:var(--pink);color:#fff;padding:48px 0;text-align:center;font-weight:700}
-footer small{display:block;font-weight:400;opacity:.85;margin-top:6px}
-@media(max-width:860px){.concept,.notes{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:36px}.phone{margin:0 auto}section{padding:56px 0}header.hero::after{width:200px;height:200px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>粧美堂 コーポレートサイト リニューアルデザイン提案</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink: #e5004f;
+        --soft: #fdeef0;
+        --blush: #f9d9de;
+        --ink: #3a2a2e;
+        --muted: #7c6a6f;
+        --bg: #fff;
+        --card: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --soft: #2a1c20;
+          --blush: #3b2429;
+          --ink: #f6e9eb;
+          --muted: #c0a9ae;
+          --bg: #1c1316;
+          --card: #241a1d;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.9;
+        padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      header.hero {
+        background: linear-gradient(180deg, var(--soft), var(--bg));
+        padding: 96px 0 72px;
+        position: relative;
+        overflow: hidden;
+      }
+      header.hero::after {
+        content: "";
+        position: absolute;
+        right: -90px;
+        top: -70px;
+        width: 340px;
+        height: 340px;
+        background: var(--pink);
+        opacity: 0.9;
+        clip-path: polygon(50% 0, 100% 30%, 88% 82%, 40% 100%, 0 55%);
+      }
+      .brand {
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        color: var(--pink);
+        font-size: 20px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 54px);
+        line-height: 1.35;
+        margin: 28px 0 20px;
+        font-weight: 900;
+        position: relative;
+        z-index: 1;
+      }
+      .lead {
+        max-width: 34em;
+        color: var(--muted);
+        position: relative;
+        z-index: 1;
+      }
+      nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 36px;
+        position: relative;
+        z-index: 1;
+      }
+      nav a {
+        padding: 8px 18px;
+        border-radius: 99px;
+        background: var(--card);
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid var(--blush);
+      }
+      nav a:hover,
+      nav a:focus-visible {
+        background: var(--pink);
+        color: #fff;
+        outline: none;
+      }
+      section {
+        padding: 80px 0;
+      }
+      section.tint {
+        background: var(--soft);
+      }
+      h2 {
+        font-size: clamp(24px, 3.4vw, 34px);
+        margin: 0 0 12px;
+        font-weight: 900;
+        padding-left: 18px;
+        border-left: 8px solid var(--pink);
+        line-height: 1.4;
+      }
+      .sub {
+        color: var(--muted);
+        margin: 0 0 40px;
+        padding-left: 26px;
+      }
+      .concept {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .concept div {
+        background: var(--card);
+        border-radius: 24px 24px 24px 4px;
+        padding: 28px;
+        border: 1px solid var(--blush);
+      }
+      .concept h3 {
+        margin: 0 0 8px;
+        color: var(--pink);
+        font-size: 18px;
+      }
+      .concept p {
+        margin: 0;
+        font-size: 14.5px;
+      }
+      .browser {
+        background: var(--card);
+        border-radius: 14px;
+        border: 1px solid var(--blush);
+        box-shadow: 0 24px 60px -30px rgba(229, 0, 79, 0.45);
+        overflow: hidden;
+      }
+      .bar {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        padding: 12px 16px;
+        background: var(--blush);
+      }
+      .bar i {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--pink);
+        opacity: 0.55;
+      }
+      .bar span {
+        margin-left: 12px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .scroll {
+        overflow-y: auto;
+        height: min(72vh, 640px);
+        -webkit-overflow-scrolling: touch;
+      }
+      .scroll img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .hint {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 14px 0 0;
+        text-align: right;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 340px) 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .phone {
+        background: #2b1d21;
+        border-radius: 44px;
+        padding: 14px;
+        box-shadow: 0 24px 60px -30px rgba(229, 0, 79, 0.55);
+        max-width: 340px;
+      }
+      .phone .scroll {
+        border-radius: 32px;
+        height: min(74vh, 660px);
+        background: #fff;
+      }
+      ol.points {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: p;
+      }
+      ol.points li {
+        counter-increment: p;
+        padding: 0 0 26px 58px;
+        position: relative;
+      }
+      ol.points li::before {
+        content: counter(p);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: var(--pink);
+        color: #fff;
+        font-weight: 900;
+        display: grid;
+        place-items: center;
+      }
+      ol.points b {
+        display: block;
+        font-size: 17px;
+        margin-bottom: 2px;
+      }
+      ol.points span {
+        font-size: 14.5px;
+        color: var(--muted);
+      }
+      .video {
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--blush);
+        background: #000;
+        box-shadow: 0 24px 60px -30px rgba(229, 0, 79, 0.45);
+      }
+      video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 32px;
+      }
+      .notes div {
+        padding: 20px 24px;
+        background: var(--card);
+        border-radius: 16px;
+        border: 1px solid var(--blush);
+        font-size: 14.5px;
+      }
+      .notes b {
+        color: var(--pink);
+        display: block;
+        margin-bottom: 4px;
+      }
+      footer {
+        background: var(--pink);
+        color: #fff;
+        padding: 48px 0;
+        text-align: center;
+        font-weight: 700;
+      }
+      footer small {
+        display: block;
+        font-weight: 400;
+        opacity: 0.85;
+        margin-top: 6px;
+      }
+      @media (max-width: 860px) {
+        .concept,
+        .notes {
+          grid-template-columns: 1fr;
+        }
+        .split {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .phone {
+          margin: 0 auto;
+        }
+        section {
+          padding: 56px 0;
+        }
+        header.hero::after {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
 
-.tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--blush);padding:calc(10px + env(safe-area-inset-top)) 0 10px}
-.tabs .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.tabs button{font:inherit;font-weight:900;padding:10px 26px;border-radius:99px;border:2px solid var(--pink);background:var(--card);color:var(--pink);cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--pink);color:#fff}
-.tabs button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.tabs small{color:var(--muted);margin-left:auto;font-size:13px}
-.plan[hidden]{display:none}
-.catch{font-size:clamp(20px,3vw,28px);font-weight:900;color:var(--pink);margin:0 0 32px;padding-left:26px}
-.dark{--pink:#E5004F}
-.ex{display:grid;gap:18px}
-.ex div{background:var(--card);border:1px solid var(--ink);padding:22px 26px;border-radius:6px}
-.ex h3{margin:0 0 6px;color:var(--pink);font-size:17px}
-.ex p{margin:0 0 8px;font-size:14.5px}.ex p:last-child{margin:0}
-.duo{display:grid;grid-template-columns:1fr minmax(0,340px);gap:48px;align-items:start}
-.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.roles div{background:var(--card);border:1px solid var(--ink);border-radius:6px;padding:24px}
-.roles h3{margin:0 0 4px;font-size:20px}.roles h4{margin:0 0 8px;color:var(--pink);font-size:16px}.roles p{margin:0;font-size:14.5px}
-@media(max-width:860px){.duo{grid-template-columns:1fr}.roles{grid-template-columns:1fr}.tabs small{margin-left:0;width:100%}}
-</style>
-</head>
-<body>
-<header class="hero"><div class="wrap">
-  <div class="brand">SHOBIDO</div>
-  <h1>粧美堂 コーポレートサイト<br>リニューアルデザイン提案</h1>
-  <p class="lead">「あなたらしさを、瞳にデザインする。」という想いを、色とイラストの動きで伝えるトップページのご提案です。A案・B案の2案をご用意しました。タブで切り替えてご覧ください。</p>
-  
-</div></header>
-<div class="tabs"><div class="wrap" role="tablist">
-<button role="tab" id="tabA" aria-selected="true" aria-controls="planA">A案</button>
-<button role="tab" id="tabB" aria-selected="false" aria-controls="planB">B案</button>
-<small id="tabnote">A案:親しみのあるイラストと動きで伝えるご提案</small></div></div>
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--bg);
+        border-bottom: 1px solid var(--blush);
+        padding: calc(10px + env(safe-area-inset-top)) 0 10px;
+      }
+      .tabs .wrap {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .tabs button {
+        font: inherit;
+        font-weight: 900;
+        padding: 10px 26px;
+        border-radius: 99px;
+        border: 2px solid var(--pink);
+        background: var(--card);
+        color: var(--pink);
+        cursor: pointer;
+      }
+      .tabs button[aria-selected="true"] {
+        background: var(--pink);
+        color: #fff;
+      }
+      .tabs button:focus-visible {
+        outline: 3px solid var(--ink);
+        outline-offset: 2px;
+      }
+      .tabs small {
+        color: var(--muted);
+        margin-left: auto;
+        font-size: 13px;
+      }
+      .plan[hidden] {
+        display: none;
+      }
+      .catch {
+        font-size: clamp(20px, 3vw, 28px);
+        font-weight: 900;
+        color: var(--pink);
+        margin: 0 0 32px;
+        padding-left: 26px;
+      }
+      .dark {
+        --pink: #e5004f;
+      }
+      .ex {
+        display: grid;
+        gap: 18px;
+      }
+      .ex div {
+        background: var(--card);
+        border: 1px solid var(--ink);
+        padding: 22px 26px;
+        border-radius: 6px;
+      }
+      .ex h3 {
+        margin: 0 0 6px;
+        color: var(--pink);
+        font-size: 17px;
+      }
+      .ex p {
+        margin: 0 0 8px;
+        font-size: 14.5px;
+      }
+      .ex p:last-child {
+        margin: 0;
+      }
+      .duo {
+        display: grid;
+        grid-template-columns: 1fr minmax(0, 340px);
+        gap: 48px;
+        align-items: start;
+      }
+      .roles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .roles div {
+        background: var(--card);
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        padding: 24px;
+      }
+      .roles h3 {
+        margin: 0 0 4px;
+        font-size: 20px;
+      }
+      .roles h4 {
+        margin: 0 0 8px;
+        color: var(--pink);
+        font-size: 16px;
+      }
+      .roles p {
+        margin: 0;
+        font-size: 14.5px;
+      }
+      @media (max-width: 860px) {
+        .duo {
+          grid-template-columns: 1fr;
+        }
+        .roles {
+          grid-template-columns: 1fr;
+        }
+        .tabs small {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="brand">SHOBIDO</div>
+        <h1>粧美堂 コーポレートサイト<br />リニューアルデザイン提案</h1>
+        <p class="lead">
+          「あなたらしさを、瞳にデザインする。」という想いを、色とイラストの動きで伝えるトップページのご提案です。A案・B案の2案をご用意しました。タブで切り替えてご覧ください。
+        </p>
+      </div>
+    </header>
+    <div class="tabs">
+      <div class="wrap" role="tablist">
+        <button role="tab" id="tabA" aria-selected="true" aria-controls="planA">
+          A案
+        </button>
+        <button
+          role="tab"
+          id="tabB"
+          aria-selected="false"
+          aria-controls="planB"
+        >
+          B案
+        </button>
+        <small id="tabnote">A案:親しみのあるイラストと動きで伝えるご提案</small>
+      </div>
+    </div>
 
+    <div class="plan" id="planA" role="tabpanel" aria-labelledby="tabA">
+      <section id="concept">
+        <div class="wrap">
+          <h2>デザインコンセプト</h2>
+          <p class="sub">
+            ブランドカラーのピンクを軸に、親しみやすさと企業としての信頼感を両立します。
+          </p>
+          <div class="concept">
+            <div>
+              <h3>親しみのあるイラスト</h3>
+              <p>
+                メインビジュアルに、人々が一枚の絵をつくり上げるイラストを採用。化粧品・コンタクトレンズ・キッズコスメを扱う粧美堂の世界観を、ひと目で伝えます。
+              </p>
+            </div>
+            <div>
+              <h3>ピンクのグラデーション</h3>
+              <p>
+                淡いピンクの背景にブランドカラーを効かせ、華やかさと読みやすさを両立。区切りの色面で、ページのリズムをつくります。
+              </p>
+            </div>
+            <div>
+              <h3>目的別の導線設計</h3>
+              <p>
+                ニュース、商品、法人向けサービス、会社情報、IR、採用を、それぞれ探しやすいブロックに整理しました。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<div class="plan" id="planA" role="tabpanel" aria-labelledby="tabA">
-<section id="concept"><div class="wrap">
-  <h2>デザインコンセプト</h2>
-  <p class="sub">ブランドカラーのピンクを軸に、親しみやすさと企業としての信頼感を両立します。</p>
-  <div class="concept">
-    <div><h3>親しみのあるイラスト</h3><p>メインビジュアルに、人々が一枚の絵をつくり上げるイラストを採用。化粧品・コンタクトレンズ・キッズコスメを扱う粧美堂の世界観を、ひと目で伝えます。</p></div>
-    <div><h3>ピンクのグラデーション</h3><p>淡いピンクの背景にブランドカラーを効かせ、華やかさと読みやすさを両立。区切りの色面で、ページのリズムをつくります。</p></div>
-    <div><h3>目的別の導線設計</h3><p>ニュース、商品、法人向けサービス、会社情報、IR、採用を、それぞれ探しやすいブロックに整理しました。</p></div>
-  </div>
-</div></section>
+      <section id="pc" class="tint">
+        <div class="wrap">
+          <h2>PCデザイン(トップページ)</h2>
+          <p class="sub">
+            画面内をスクロールして、ページ全体をご確認いただけます。
+          </p>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span>PC / 1512px</span></div>
+            <div class="scroll" tabindex="0" aria-label="PCトップデザイン">
+              <img
+                src="images/TOP.jpg"
+                alt="粧美堂コーポレートサイト PCトップデザイン"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="pc" class="tint"><div class="wrap">
-  <h2>PCデザイン(トップページ)</h2>
-  <p class="sub">画面内をスクロールして、ページ全体をご確認いただけます。</p>
-  <div class="browser">
-    <div class="bar"><i></i><i></i><i></i><span>PC / 1512px</span></div>
-    <div class="scroll" tabindex="0" aria-label="PCトップデザイン"><img src="images/TOP.jpg" alt="粧美堂コーポレートサイト PCトップデザイン"></div>
-  </div>
-  <p class="hint">画像:images/TOP.jpg</p>
-</div></section>
+      <section id="sp">
+        <div class="wrap">
+          <h2>SPデザイン(トップページ)</h2>
+          <p class="sub">
+            スマートフォンでも、PCと同じ世界観と情報の順番で読める構成です。
+          </p>
+          <div class="split">
+            <div class="phone">
+              <div class="scroll" tabindex="0" aria-label="SPトップデザイン">
+                <img
+                  src="images/SP.jpg"
+                  alt="粧美堂コーポレートサイト SPトップデザイン"
+                />
+              </div>
+            </div>
+            <ol class="points">
+              <li>
+                <b>メインビジュアルの直下に主要ボタン</b
+                ><span
+                  >「商品を探す」「お客様サポート」を最初の画面に置き、迷わず目的のページへ進めます。</span
+                >
+              </li>
+              <li>
+                <b>重要なお知らせ</b
+                ><span>緊急時の重要告知枠を設置。原則は非表示となります。</span>
+              </li>
+              <li>
+                <b>レスポンシブ対応</b
+                ><span
+                  >ニュース、商品、法人向けサービス、会社情報、IRの順で、PCとSPの体験をそろえました。</span
+                >
+              </li>
+              <li>
+                <b>ユーザビリティを考慮したボタンサイズ</b
+                ><span
+                  >横幅いっぱいのボタンで、片手でも操作しやすくしています。</span
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-<section id="sp"><div class="wrap">
-  <h2>SPデザイン(トップページ)</h2>
-  <p class="sub">スマートフォンでも、PCと同じ世界観と情報の順番で読める構成です。</p>
-  <div class="split">
-    <div class="phone"><div class="scroll" tabindex="0" aria-label="SPトップデザイン"><img src="images/SP.jpg" alt="粧美堂コーポレートサイト SPトップデザイン"></div></div>
-    <ol class="points">
-      <li><b>メインビジュアルの直下に主要ボタン</b><span>「商品を探す」「お客様サポート」を最初の画面に置き、迷わず目的のページへ進めます。</span></li>
-      <li><b>重要なお知らせを目立たせる</b><span>ピンクの帯で、災害時のお見舞いなど大切な告知を確実に届けます。</span></li>
-      <li><b>PCと同じ順番の縦積み構成</b><span>ニュース、商品、法人向けサービス、会社情報、IRの順で、PCとSPの体験をそろえました。</span></li>
-      <li><b>指で押しやすいボタンサイズ</b><span>横幅いっぱいのボタンで、片手でも操作しやすくしています。</span></li>
-    </ol>
-  </div>
-  <p class="hint">画像:images/SP.jpg</p>
-</div></section>
+      <section id="motion" class="tint">
+        <div class="wrap">
+          <h2>メインビジュアルのアニメーション</h2>
+          <p class="sub">
+            イラストが少しずつ動き、来訪者を迎えるトップならではの演出イメージです。
+          </p>
+          <div class="video">
+            <video
+              src="movie/movie.mp4"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+          <div class="notes">
+            <div>
+              <b>動きの役割</b
+              >若い世代を中心としたターゲット層に共感を得やすいような、柔らかいタッチの動きのあるイラストでブランドの楽しさを直感的に伝えます。（制作時には複数パターン動画を追加して20秒ほどの動画にする予定です。）
+            </div>
+            <div>
+              <b>読み込みへの配慮</b
+              >本番では軽量な動画での実装を想定しています。
+            </div>
+            <div>
+              <b>SPへの展開</b>SPでは同じ動きを縦長の構図に合わせて表示します。
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="plan" id="planB" role="tabpanel" aria-labelledby="tabB" hidden>
+      <section>
+        <div class="wrap">
+          <h2>デザインコンセプト</h2>
+          <p class="sub">
+            B案は、大手企業ならではの格と、見渡しやすい構成を軸にしたご提案です。
+          </p>
+          <p class="catch">粧美堂の今を、正しく・強く・美しく証明する</p>
+          <div class="concept">
+            <div>
+              <h3>1 「格」と「余裕」</h3>
+              <p>
+                大手ならではの「格」と「余裕」を持ったビジュアル設計にします。
+              </p>
+            </div>
+            <div>
+              <h3>2 見渡せる回遊設計</h3>
+              <p>Bento UIで、ひと目で「見渡せる」回遊設計へ変えます。</p>
+            </div>
+            <div>
+              <h3>3 現在地と戦略を翻訳</h3>
+              <p>企業の「現在地」と「戦略」を、見た目で翻訳します。</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="motion" class="tint"><div class="wrap">
-  <h2>メインビジュアルのアニメーション</h2>
-  <p class="sub">イラストが少しずつ動き、来訪者を迎えるトップならではの演出イメージです。</p>
-  <div class="video"><video src="movie/movie.mp4" controls autoplay muted loop playsinline preload="metadata"></video></div>
-  <div class="notes">
-    <div><b>動きの役割</b>ページを開いた瞬間に、ブランドの楽しさと親しみを伝えます。</div>
-    <div><b>読み込みへの配慮</b>本番では軽量な動画または Lottie 形式での実装を想定しています。</div>
-    <div><b>SPへの展開</b>SPでは同じ動きを縦長の構図に合わせて表示します。</div>
-  </div>
-  <p class="hint">動画:movie/movie.mp4</p>
-</div></section>
+      <section class="tint">
+        <div class="wrap">
+          <h2>TOPページ全体</h2>
+          <p class="sub">
+            PCとSPのトップページ全体です。画面内をスクロールしてご確認ください。
+          </p>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><span>PC / 1512px</span></div>
+            <div class="scroll" tabindex="0" aria-label="B案 PCトップデザイン">
+              <img src="images/TOP_PC.jpg" alt="B案 PCトップデザイン" />
+            </div>
+          </div>
+          <div class="split" style="margin-top: 56px">
+            <div class="phone">
+              <div
+                class="scroll"
+                tabindex="0"
+                aria-label="B案 SPトップデザイン"
+              >
+                <img src="images/TOP_SP.jpg" alt="B案 SPトップデザイン" />
+              </div>
+            </div>
+            <div>
+              <h3 style="margin: 0 0 8px; color: var(--pink)">
+                SP(スマートフォン)
+              </h3>
+              <p style="color: var(--muted); margin: 0">
+                PCと同じ世界観のまま、縦スクロールで情報が順に展開される構成です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-</div>
-<div class="plan" id="planB" role="tabpanel" aria-labelledby="tabB" hidden>
-<section><div class="wrap">
-  <h2>デザインコンセプト</h2>
-  <p class="sub">B案は、大手企業ならではの格と、見渡しやすい構成を軸にしたご提案です。</p>
-  <p class="catch">粧美堂の今を、正しく・強く・美しく証明する</p>
-  <div class="concept">
-    <div><h3>1 「格」と「余裕」</h3><p>大手ならではの「格」と「余裕」を持ったビジュアル設計にします。</p></div>
-    <div><h3>2 見渡せる回遊設計</h3><p>Bento UIで、ひと目で「見渡せる」回遊設計へ変えます。</p></div>
-    <div><h3>3 現在地と戦略を翻訳</h3><p>企業の「現在地」と「戦略」を、見た目で翻訳します。</p></div>
-  </div>
-</div></section>
+      <section>
+        <div class="wrap">
+          <h2>PCデザインのご説明</h2>
+          <p class="sub">ファーストビューから、フッターまでの設計意図です。</p>
+          <div class="ex">
+            <div>
+              <h3>ファーストビューで「粧美堂の今」を宣言する</h3>
+              <p>
+                バラの花びらのクローズアップをフルブリードで配置し、「笑顔を、咲かせよう。」というコピーを大きく重ねています。
+              </p>
+              <p>
+                ファーストビューの役割は、ブランドの“格”を一瞬で伝えることです。情報より先に「この会社はただ者ではない」という印象を与える設計です。
+              </p>
+              <p>
+                右カラムのニュースエリアとの2カラム構成で、KVの存在感を保ちつつ情報密度を担保しています。下方には、商品・事業に関連する動線を親しみやすい3Dイラストで配置し、各コンテンツへの入口としても機能させています。
+              </p>
+            </div>
+            <div>
+              <h3>事業の広がりを「見渡せる」構造へ</h3>
+              <p>
+                「美を運ぶ」から「美を創る」へというブランドステートメントをページ中段に配置。スクロールの流れの中で、自然にブランドの文脈が伝わります。
+              </p>
+              <p>
+                投資家・取引先・求職者など、目的の異なるステークホルダーが迷わずゴールへたどり着けるよう、4つの主要コンテンツをグリッドで並列配置しました。スクロール不要で全体を俯瞰でき、「自分に関係のある情報がどこにあるか」が瞬時に判断できます。
+              </p>
+            </div>
+            <div>
+              <h3>「活きた情報」で企業の今を伝える</h3>
+              <p>
+                企業の姿勢や事業を一通り伝えた流れの中に、ニュースリリースとIR情報を2カラムで並列配置しています。最新情報をコンテンツとして設けることで、「常に前進している企業」であることを伝えます。
+              </p>
+              <p>
+                IRは企業の信頼性・透明性・成長性を示す重要な情報です。ニュースと同じ視線の高さに並べ、その価値にふさわしい存在感を与えています。
+              </p>
+            </div>
+            <div>
+              <h3>サイトの「出口」を、次の入口に変える</h3>
+              <p>
+                フッター直上のバナーエリアでは、B2B展開・トップインタビュー・グローバル戦略の3コンテンツを横並びで配置し、ユーザーが「次に見るべきもの」へ自然に進めるようにしています。
+              </p>
+              <p>
+                フッターは全コンテンツを整然と一覧できる構成にし、どのページからでも見たい情報へ迷わずたどり着けます。離脱ではなく、回遊につなげます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="tint"><div class="wrap">
-  <h2>TOPページ全体</h2>
-  <p class="sub">PCとSPのトップページ全体です。画面内をスクロールしてご確認ください。</p>
-  <div class="duo">
-    <div class="browser"><div class="bar"><i></i><i></i><i></i><span>PC</span></div>
-    <div class="scroll" tabindex="0" aria-label="B案 PCトップデザイン"><img src="images/TOP_PC.jpg" alt="B案 PCトップデザイン"></div></div>
-    <div class="phone"><div class="scroll" tabindex="0" aria-label="B案 SPトップデザイン"><img src="images/TOP_SP.jpg" alt="B案 SPトップデザイン"></div></div>
-  </div>
-  <p class="hint">画像:images/TOP_PC.jpg / images/TOP_SP.jpg</p>
-</div></section>
+      <section class="tint">
+        <div class="wrap">
+          <h2>SPデザインのご説明</h2>
+          <p class="sub">スマートフォンで、粧美堂をフルに体験する設計です。</p>
+          <div class="ex">
+            <div>
+              <h3>SP体験の質が、そのままブランド体験の質になる</h3>
+              <p>
+                スマートフォンからのアクセスが過半数を占める今、SPの体験がブランド体験の質を左右します。縦スクロールの流れに沿って情報が自然に展開されるコンテンツ配置、指で迷わず操作できるボタンサイズと余白、ハンバーガーメニューに整理されたナビゲーションなど、「スマホで粧美堂を知ろうとする人」を起点に設計しています。
+              </p>
+              <p>
+                ファーストビューのキャッチコピーは、画面いっぱいに広がる大胆な文字組で、小さな画面でもブランドの存在感を損なわず届けます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section><div class="wrap">
-  <h2>PCデザインのご説明</h2>
-  <p class="sub">ファーストビューから、フッターまでの設計意図です。</p>
-  <div class="ex">
-    <div><h3>ファーストビューで「粧美堂の今」を宣言する</h3>
-      <p>バラの花びらのクローズアップをフルブリードで配置し、「笑顔を、咲かせよう。」というコピーを大きく重ねています。</p>
-      <p>ファーストビューの役割は、ブランドの“格”を一瞬で伝えることです。情報より先に「この会社はただ者ではない」という印象を与える設計です。</p>
-      <p>右カラムのニュースエリアとの2カラム構成で、KVの存在感を保ちつつ情報密度を担保しています。下方には、商品・事業に関連する動線を親しみやすい3Dイラストで配置し、各コンテンツへの入口としても機能させています。</p></div>
-    <div><h3>事業の広がりを「見渡せる」構造へ</h3>
-      <p>「美を運ぶ」から「美を創る」へというブランドステートメントをページ中段に配置。スクロールの流れの中で、自然にブランドの文脈が伝わります。</p>
-      <p>投資家・取引先・求職者など、目的の異なるステークホルダーが迷わずゴールへたどり着けるよう、4つの主要コンテンツをグリッドで並列配置しました。スクロール不要で全体を俯瞰でき、「自分に関係のある情報がどこにあるか」が瞬時に判断できます。</p></div>
-    <div><h3>「活きた情報」で企業の今を伝える</h3>
-      <p>企業の姿勢や事業を一通り伝えた流れの中に、ニュースリリースとIR情報を2カラムで並列配置しています。最新情報をコンテンツとして設けることで、「常に前進している企業」であることを伝えます。</p>
-      <p>IRは企業の信頼性・透明性・成長性を示す重要な情報です。ニュースと同じ視線の高さに並べ、その価値にふさわしい存在感を与えています。</p></div>
-    <div><h3>サイトの「出口」を、次の入口に変える</h3>
-      <p>フッター直上のバナーエリアでは、B2B展開・トップインタビュー・グローバル戦略の3コンテンツを横並びで配置し、ユーザーが「次に見るべきもの」へ自然に進めるようにしています。</p>
-      <p>フッターは全コンテンツを整然と一覧できる構成にし、どのページからでも見たい情報へ迷わずたどり着けます。離脱ではなく、回遊につなげます。</p></div>
-  </div>
-</div></section>
-
-<section class="tint"><div class="wrap">
-  <h2>SPデザインのご説明</h2>
-  <p class="sub">スマートフォンで、粧美堂をフルに体験する設計です。</p>
-  <div class="ex"><div><h3>SP体験の質が、そのままブランド体験の質になる</h3>
-    <p>スマートフォンからのアクセスが過半数を占める今、SPの体験がブランド体験の質を左右します。縦スクロールの流れに沿って情報が自然に展開されるコンテンツ配置、指で迷わず操作できるボタンサイズと余白、ハンバーガーメニューに整理されたナビゲーションなど、「スマホで粧美堂を知ろうとする人」を起点に設計しています。</p>
-    <p>ファーストビューのキャッチコピーは、画面いっぱいに広がる大胆な文字組で、小さな画面でもブランドの存在感を損なわず届けます。</p></div></div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>「風格」と「親しみ」を使い分けるビジュアル戦略</h2>
-  <p class="sub">コンテンツの役割に応じて、ビジュアルの言語を変えます。</p>
-  <div class="roles">
-    <div><h3>写真</h3><h4>企業としての風格を証明する</h4><p>メインビジュアル、会社情報、IR、サステナビリティ、採用などには実写の写真を配置します。企業の実体を判断しようとするステークホルダーに、リアリティと重厚感で信頼感と風格を伝えます。</p></div>
-    <div><h3>イラスト</h3><h4>粧美堂だけの世界観をつくる</h4><p>事業内容、商品情報、OEMなどのカテゴリには、オリジナル3Dイラストを作成します。親しみやすさと遊び心を持ちながら、どのページでも「粧美堂らしさ」を感じられるようにします。</p></div>
-    <div><h3>使い分けの意図</h3><h4>ビジュアルに「役割」を持たせる</h4><p>写真で「信頼してもらう」。イラストで「好きになってもらう」。この使い分けが、粧美堂の多面的な強みをひとつのサイトで体現する鍵です。</p></div>
-  </div>
-</div></section>
-</div>
-<footer><div class="wrap">笑顔を、咲かせよう。<small>SHOBIDO Corporate Site Renewal Proposal</small></div></footer>
-<script>
-(function(){var n={A:"A案:親しみのあるイラストと動きで伝えるご提案",B:"B案:格と見渡しやすさで「今」を証明するご提案"};
-function show(k,push){["A","B"].forEach(function(x){document.getElementById("plan"+x).hidden=x!==k;document.getElementById("tab"+x).setAttribute("aria-selected",x===k)});
-document.getElementById("tabnote").textContent=n[k];if(push)try{history.replaceState(null,"","#plan"+k)}catch(e){}window.scrollTo({top:document.querySelector(".tabs").offsetTop,behavior:"auto"})}
-document.getElementById("tabA").onclick=function(){show("A",1)};document.getElementById("tabB").onclick=function(){show("B",1)};
-if(location.hash==="#planB")show("B",0)})();
-</script>
-</body>
+      <section>
+        <div class="wrap">
+          <h2>「風格」と「親しみ」を使い分けるビジュアル戦略</h2>
+          <p class="sub">
+            コンテンツの役割に応じて、ビジュアルの言語を変えます。
+          </p>
+          <div class="roles">
+            <div>
+              <h3>写真</h3>
+              <h4>企業としての風格を証明する</h4>
+              <p>
+                メインビジュアル、会社情報、IR、サステナビリティ、採用などには実写の写真を配置します。企業の実体を判断しようとするステークホルダーに、リアリティと重厚感で信頼感と風格を伝えます。
+              </p>
+            </div>
+            <div>
+              <h3>イラスト</h3>
+              <h4>粧美堂だけの世界観をつくる</h4>
+              <p>
+                事業内容、商品情報、OEMなどのカテゴリには、オリジナル3Dイラストを作成します。親しみやすさと遊び心を持ちながら、どのページでも「粧美堂らしさ」を感じられるようにします。
+              </p>
+            </div>
+            <div>
+              <h3>使い分けの意図</h3>
+              <h4>ビジュアルに「役割」を持たせる</h4>
+              <p>
+                写真で「信頼してもらう」。イラストで「好きになってもらう」。この使い分けが、粧美堂の多面的な強みをひとつのサイトで体現する鍵です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="wrap">
+        笑顔を、咲かせよう。<small
+          >SHOBIDO Corporate Site Renewal Proposal</small
+        >
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var n = {
+          A: "A案:親しみのあるイラストと動きで伝えるご提案",
+          B: "B案:格と見渡しやすさで「今」を証明するご提案",
+        };
+        function show(k, push) {
+          ["A", "B"].forEach(function (x) {
+            document.getElementById("plan" + x).hidden = x !== k;
+            document
+              .getElementById("tab" + x)
+              .setAttribute("aria-selected", x === k);
+          });
+          document.getElementById("tabnote").textContent = n[k];
+          if (push)
+            try {
+              history.replaceState(null, "", "#plan" + k);
+            } catch (e) {}
+          window.scrollTo({
+            top: document.querySelector(".tabs").offsetTop,
+            behavior: "auto",
+          });
+        }
+        document.getElementById("tabA").onclick = function () {
+          show("A", 1);
+        };
+        document.getElementById("tabB").onclick = function () {
+          show("B", 1);
+        };
+        if (location.hash === "#planB") show("B", 0);
+      })();
+    </script>
+  </body>
 </html>
